@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Kopi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Quicksand', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f0ea;
+            color: #3c2415;
+        }
+        
+        header {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/api/placeholder/1200/400");
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .menu-section {
+            margin-bottom: 50px;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: #6f4e37;
+        }
+        
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .menu-item {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .menu-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .menu-content {
+            padding: 20px;
+        }
+        
+        .menu-title {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .menu-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+        
+        .menu-price {
+            color: #6f4e37;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+        
+        .menu-description {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        
+        .menu-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .tag {
+            background-color: #f0e6d9;
+            color: #6f4e37;
+            font-size: 0.8rem;
+            padding: 5px 10px;
+            border-radius: 20px;
+        }
+        
+        .cta-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .cta-button {
+            background-color: #6f4e37;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background-color: #55392c;
+        }
+        
+        footer {
+            background-color: #3c2415;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .menu-grid {
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Aroma Nusantara</h1>
+        <div class="tagline">Nikmatnya Kopi Pilihan Terbaik Indonesia</div>
+    </header>
+    
+    <div class="container">
+        <div class="menu-section">
+            <h2 class="section-title">Menu Kopi Signature</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-image" style="background-image: url('img/menu/kopiaacehgayo.jpg')"></div>
+                    <div class="menu-content">
+                        <div class="menu-title">
+                            <div class="menu-name">Kopi Aceh Gayo</div>
+                            <div class="menu-price">Rp 35.000</div>
+                        </div>
+                        <div class="menu-description">
+                            Kopi premium dari dataran tinggi Gayo, Aceh dengan cita rasa khas buah berry, cokelat, dan sentuhan rempah.
+                        </div>
+                        <div class="menu-tags">
+                            <span class="tag">Arabika</span>
+                            <span class="tag">Medium Roast</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-image" style="background-image: url('img/menu/toraja\ sapan.jpg')"></div>
+                    <div class="menu-content">
+                        <div class="menu-title">
+                            <div class="menu-name">Toraja Sapan</div>
+                            <div class="menu-price">Rp 32.000</div>
+                        </div>
+                        <div class="menu-description">
+                            Kopi dengan karakter unik dari Toraja, memiliki rasa yang kompleks dengan sentuhan karamel dan sedikit keasaman buah.
+                        </div>
+                        <div class="menu-tags">
+                            <span class="tag">Arabika</span>
+                            <span class="tag">Dark Roast</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-image" style="background-image: url('img/menu/java\ preanger.jpg')"></div>
+                    <div class="menu-content">
+                        <div class="menu-title">
+                            <div class="menu-name">Java Preanger</div>
+                            <div class="menu-price">Rp 30.000</div>
+                        </div>
+                        <div class="menu-description">
+                            Kopi klasik dari pegunungan Jawa Barat dengan cita rasa seimbang antara keasaman, manis, dan sentuhan cokelat.
+                        </div>
+                        <div class="menu-tags">
+                            <span class="tag">Arabika</span>
+                            <span class="tag">Light Roast</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-image" style="background-image: url('img/menu/bali\ kintamani.jpg')"></div>
+                    <div class="menu-content">
+                        <div class="menu-title">
+                            <div class="menu-name">Bali Kintamani</div>
+                            <div class="menu-price">Rp 33.000</div>
+                        </div>
+                        <div class="menu-description">
+                            Kopi dengan karakter jeruk, lemon, dan madu dari lereng Gunung Batur dengan aroma bunga yang menggoda.
+                        </div>
+                        <div class="menu-tags">
+                            <span class="tag">Arabika</span>
+                            <span class="tag">Medium Roast</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="menu-section">
+            <h2 class="section-title">Menu Kopi Metode Manual</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-image" style="background-image: url('img/menu/v60\ pour.jpg')"></div>
+                    <div class="menu-content">
+                        <div class="menu-title">
+                            <div class="menu-name">V60 Pour Over</div>
+                            <div class="menu-price">Rp 28.000</div>
+                        </div>
+                        <div class="menu-description">
+                            Kopi yang diseduh dengan teknik pour over menggunakan V60, menghasilkan kopi yang bersih dan menyoroti cita rasa buah.
+                        </div>
+                        <div class="menu-tags">
+                            <span class="tag">Manual Brew</span>
+                            <span class="tag">Ringan</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-image" style="background-image: url('img/menu/vietnam\ drip.jpg')"></div>
+                    <div class="menu-content">
+                        <div class="menu-title">
+                            <div class="menu-name">Vietnam Drip</div>
+                            <div class="menu-price">Rp 25.000</div>
+                        </div>
+                        <div class="menu-description">
+                            Kopi robusta pekat yang diseduh dengan penyaring khas Vietnam, disajikan dengan susu kental manis.
+                        </div>
+                        <div class="menu-tags">
+                            <span class="tag">Robusta</span>
+                            <span class="tag">Sweet</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-image" style="background-image: url('img/menu/french\ press.jpg')"></div>
+                    <div class="menu-content">
+                        <div class="menu-title">
+                            <div class="menu-name">French Press</div>
+                            <div class="menu-price">Rp 27.000</div>
+                        </div>
+                        <div class="menu-description">
+                            Kopi dengan body penuh dan rasa yang kaya, diseduh menggunakan French Press untuk mempertahankan minyak alami kopi.
+                        </div>
+                        <div class="menu-tags">
+                            <span class="tag">Manual Brew</span>
+                            <span class="tag">Full Body</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-image" style="background-image: url('img/menu/aeropress.jpg')"></div>
+                    <div class="menu-content">
+                        <div class="menu-title">
+                            <div class="menu-name">Aeropress</div>
+                            <div class="menu-price">Rp 29.000</div>
+                        </div>
+                        <div class="menu-description">
+                            Kopi yang diseduh dengan tekanan, menghasilkan ekstraksi yang sempurna dengan rasa yang bersih dan aroma yang intens.
+                        </div>
+                        <div class="menu-tags">
+                            <span class="tag">Manual Brew</span>
+                            <span class="tag">Seimbang</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="menu-section">
+            <h2 class="section-title">Minuman Kopi Spesial</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-image" style="background-image: url('img/menu/gulaaren.jpg')"></div>
+                    <div class="menu-content">
+                        <div class="menu-title">
+                            <div class="menu-name">Es Kopi Susu Gula Aren</div>
+                            <div class="menu-price">Rp 38.000</div>
+                        </div>
+                        <div class="menu-description">
+                            Espresso blend lokal dicampur dengan susu segar dan gula aren asli, disajikan dengan es batu.
+                        </div>
+                        <div class="menu-tags">
+                            <span class="tag">Espresso</span>
+                            <span class="tag">Dingin</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-image" style="background-image: url('img/menu/kopijahe.jpg')"></div>
+                    <div class="menu-content">
+                        <div class="menu-title">
+                            <div class="menu-name">Kopi Jahe</div>
+                            <div class="menu-price">Rp 27.000</div>
+                        </div>
+                        <div class="menu-description">
+                            Kopi tradisional dengan jahe segar yang menghangatkan tubuh, perpaduan sempurna antara rempah dan kopi.
+                        </div>
+                        <div class="menu-tags">
+                            <span class="tag">Tradisional</span>
+                            <span class="tag">Hangat</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-image" style="background-image: url('img/menu/affogato.jpg')"></div>
+                    <div class="menu-content">
+                        <div class="menu-title">
+                            <div class="menu-name">Affogato</div>
+                            <div class="menu-price">Rp 35.000</div>
+                        </div>
+                        <div class="menu-description">
+                            Eskrim vanila premium disiram dengan espresso panas, menciptakan kontras suhu dan rasa yang memikat.
+                        </div>
+                        <div class="menu-tags">
+                            <span class="tag">Espresso</span>
+                            <span class="tag">Dessert</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-image" style="background-image: url('img/menu/kelapa.jpg')"></div>
+                    <div class="menu-content">
+                        <div class="menu-title">
+                            <div class="menu-name">Kopi Kelapa</div>
+                            <div class="menu-price">Rp 32.000</div>
+                        </div>
+                        <div class="menu-description">
+                            Kreasi unik dari kopi robusta Indonesia dengan santan kelapa dan gula kelapa, menciptakan rasa tropis yang menyegarkan.
+                        </div>
+                        <div class="menu-tags">
+                            <span class="tag">Signature</span>
+                            <span class="tag">Creamy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cta-container">
+            <button class="cta-button">Pesan Sekarang</button>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2025 Kopi Basudara. Semua Hak Dilindungi.</p>
+        <p>Jl. Kopi Nusantara No. 123, Jakarta Selatan</p>
+    </footer>
+</body>
+</html>
